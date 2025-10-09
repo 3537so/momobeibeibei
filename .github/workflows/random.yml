@@ -1,38 +1,40 @@
 name: Click分享Link
-
 on:
   push:
     branches:
       - main
   schedule:
-    - cron: '1 0,9,16,22 * * *'
+    - cron: '1,32 * * * *' 
   workflow_dispatch:
   watch:
     types: started
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      # 检出代码
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4  # ✅ 从 v2 升级为 v4
 
-      # 自动检测 Node.js 版本（支持 .nvmrc 或 package.json 中的 engines.node 字段）
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4  # ✅ 从 v1 升级为 v4
         with:
-          node-version-file: '.nvmrc'  # 若仓库中无此文件，可自动回退到默认 Node 版本
-          cache: 'npm'                 # ✅ 内置 npm 缓存，自动识别 package-lock.json
+          node-version: 18  # ✅ 固定 Node 版本，避免 .nvmrc 报错
 
-      # 安装依赖（npm 自动命中缓存）
-      - name: Install dependencies
-        run: npm ci || npm install     # 优先使用 npm ci（更快、更干净），失败则回退到 install
+      - name: Cache node_modules
+        uses: actions/cache@v4  # ✅ 从 v2 升级为 v4
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }}
 
-      # 运行脚本
-      - name: 运行
-        run: node momo_random.js
+      - name: npm install
+        run: |
+          npm install
+
+      - name: '运行'
+        run: |
+          node momo_random.js
         env:
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
