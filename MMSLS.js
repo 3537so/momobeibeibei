@@ -21,7 +21,7 @@ const MMSLS = [
 const MMSLS = [
     
     https://www.maimemo.com/share/page?pid=695034b5f00e2658a3f0a47f62a6d5ed&uid=27304477&qq_aio_chat_type=3&tid=f8bc5cb417b772d621749a23669f3429，
-    https://www.maimemo.com/share/page?pid=c18b2f7091558c5a3b681cef5b86ebd7&qq_aio_chat_type=3&tid=18e21c4a2149aabdc2ff92dd56c1086f&uid=27304477，
+    https://www.maimemo.com/share/page?qq_aio_chat_type=3&pid=3b003415794e9dc454fa97269fc0dd03&uid=27304477&tid=0c6198b58b9d07e6106a1261d596a6f3，
     https://www.maimemo.com/share/page?qq_aio_chat_type=3&uid=27304477&pid=c0b11550c16ec9b56230a4af62f28a05&tid=01140a24a424c99429698c327a3ed0da，
   ]
   /**
