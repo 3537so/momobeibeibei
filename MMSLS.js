@@ -22,7 +22,7 @@ const MMSLS = [
     
     https://www.maimemo.com/share/page?qq_aio_chat_type=3&uid=27304477&pid=6892ca1d2794bd5883cea7c9b5aa44cd&tid=41e6fdb48e6295df230ff025f6ff3d71，
     https://www.maimemo.com/share/page?qq_aio_chat_type=3&pid=5f65cae2e40101bebb34e9a6790343e1&uid=27304477&tid=618f5a0a5f55dca9142fd26ab9f0df1d，
-    https://www.maimemo.com/share/page?qq_aio_chat_type=3&pid=ad50fa5508c79d60f96ff53c7f59b6b7&uid=27304477&tid=09e8486aa0e029e5cc3bb6bd292e1967，
+    https://www.maimemo.com/share/page?uid=27304477&pid=3a347e37014b3daf1437e544b50a74f0&tid=3cea75d066d2d94844ba84b7bb7acb10，
   ]
   /**
    * 生成随机数字
